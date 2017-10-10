@@ -1,0 +1,96 @@
+/*!
+ * iGrids v1.0 (http://www.idevia.in)
+ * Copyright 2016-2017 iDevia.
+ * Licensed under MIT (https://github.com/idevia/igrids/blob/master/license.txt)
+ */
+ 
+@import 'vars'
+
+*,*:before,*:after
+  box-sizing: border-box
+
+.wrapper
+  width: 100%
+  margin: 0 auto
+  padding-left: 10px
+  padding-right: 10px
+
+.full-wrapper
+  padding-left: 10px
+  padding-right: 10px
+  margin-left: auto
+  margin-right: auto
+
+.row
+  margin-left: -10px
+  margin-right: -10px
+  &:before,
+  &:after
+    content: " "
+    display: table
+  &:after
+    clear: both
+
+[class*='col-']
+  width: 100%
+  float: left
+  position: relative
+  min-height: 1px
+  padding-right: 10px
+  padding-left: 10px
+
+  @media screen and (max-width: $extra-small-screen)
+    min-width: 300px
+  @media screen and (max-width: $small-screen)
+    min-width: 460px
+  @media screen and (max-width: $medium-screen)
+    min-width: 748px
+  @media screen and (max-width: $large-screen)
+    min-width: 972px  
+  @media screen and (max-width: $extra-large-screen)
+    min-width: 1180px
+
+@media screen and (max-width: $extra-small-screen)
+  @for $i from 1 through 12
+    $width: percentage($i/12)
+    .col-xs#{$i}
+      width: $width
+    @if $i != 12
+      .col-gap-xs#{$i}
+        margin-left: $width
+
+@media screen and (max-width: $small-screen)
+  @for $i from 1 through 12
+    $width: percentage($i/12)
+    .col-s#{$i}
+      width: $width
+    @if $i != 12
+      .col-gap-s#{$i}
+        margin-left: $width
+
+@media screen and (max-width: $medium-screen)
+  @for $i from 1 through 12
+    $width: percentage($i/12)
+    .col-m#{$i}
+      width: $width
+    @if $i != 12
+      .col-gap-m#{$i}
+        margin-left: $width
+
+@media screen and (max-width: $large-screen)
+  @for $i from 1 through 12
+    $width: percentage($i/12)
+    .col-l#{$i}
+      width: $width
+    @if $i != 12
+      .col-gap-l#{$i}
+        margin-left: $width
+
+@media screen and (max-width: $extra-large-screen)
+  @for $i from 1 through 12
+    $width: percentage($i/12)
+    .col-xl#{$i}
+      width: $width
+    @if $i != 12
+      .col-gap-xl#{$i}
+        margin-left: $width
