@@ -42,13 +42,21 @@
   @media screen and (max-width: $extra-small-screen)
     min-width: 300px
   @media screen and (max-width: $small-screen)
-    min-width: 460px
+    min-width: 542px
   @media screen and (max-width: $medium-screen)
     min-width: 748px
   @media screen and (max-width: $large-screen)
     min-width: 972px  
   @media screen and (max-width: $extra-large-screen)
     min-width: 1180px
+
+@for $i from 1 through 12
+    $width: percentage($i/12)
+    .col-#{$i}
+      width: $width
+    @if $i != 12
+      .col-gap-#{$i}
+        margin-left: $width
 
 @media screen and (max-width: $extra-small-screen)
   @for $i from 1 through 12
